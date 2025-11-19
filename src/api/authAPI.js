@@ -61,6 +61,7 @@ export const getMeAPI = async () => {
         const res = await axiosInstance.get("/auth/me");
         return res.data.user;
     } catch (err) {
+        console.log(err);
         return null;
     }
 };
