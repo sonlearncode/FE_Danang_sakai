@@ -7,6 +7,7 @@ function Home({ selectedOption }) {
   if (selectedOption?.type === "tailieu") {
     return <DocumentSection subject={selectedOption.subject} />;
   }
+
   if (selectedOption?.type === "dethi") {
     return <ExamSection subject={selectedOption.subject} />;
   }

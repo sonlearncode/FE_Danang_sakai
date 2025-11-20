@@ -8,9 +8,8 @@ function SubjectItem({ subject, openSubject, setOpenSubject, onSelect }) {
     <li>
       <button
         onClick={toggleSubject}
-        className={`w-full flex justify-between items-center py-1.5 px-3 hover:bg-gray-100 rounded text-sm text-gray-700 ${
-          isOpen ? "bg-gray-100" : ""
-        }`}
+        className={`w-full flex justify-between items-center py-1.5 px-3 hover:bg-gray-100 rounded text-sm text-gray-700 ${isOpen ? "bg-gray-100" : ""
+          }`}
       >
         <span className="flex items-center gap-2">
           <i className={`${subject.icon} ${subject.color}`}></i>
@@ -27,13 +26,23 @@ function SubjectItem({ subject, openSubject, setOpenSubject, onSelect }) {
             icon="fa-solid fa-file-lines"
             label="Tài liệu"
             color="text-blue-500"
-            onClick={() => onSelect({ type: "tailieu", subject: subject.name })}
+            onClick={() =>
+              onSelect({
+                type: "tailieu",
+                subject, // 🔥 TRUYỀN NGUYÊN OBJECT
+              })
+            }
           />
           <OptionItem
             icon="fa-solid fa-file-pen"
             label="Đề thi"
             color="text-green-500"
-            onClick={() => onSelect({ type: "dethi", subject: subject.name })}
+            onClick={() =>
+              onSelect({
+                type: "dethi",
+                subject, // 🔥 TRUYỀN NGUYÊN OBJECT
+              })
+            }
           />
         </ul>
       )}

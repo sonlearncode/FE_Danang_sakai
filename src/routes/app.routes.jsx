@@ -5,6 +5,8 @@ import SignUpPage from "../pages/Auth/SignUpPage";
 import AboutPage from "../components/AboutPage";
 import ProtectedRoute from "./ProtectedRoute"; // cứ để đó, sau có page cần login thì thêm vào
 import GuestRoute from "./GuestRoute";
+import MaterialLayout from "../components/MaterialLayout";
+import MaterialDetailPage from "../pages/Material/MaterialDetailPage";
 
 export const appRoutes = [
     { path: "/home", element: <Layout><Home /></Layout> },
@@ -26,5 +28,12 @@ export const appRoutes = [
         ),
     },
     { path: "/about", element: <Layout><AboutPage /></Layout> },
-
+    {
+        path: "/material/:subjectSlug/:topicSlug",
+        element: (
+            <MaterialLayout>
+                <MaterialDetailPage />
+            </MaterialLayout>
+        ),
+    }
 ];
